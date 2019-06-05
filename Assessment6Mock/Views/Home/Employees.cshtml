@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Employees";
+}
+
+<h2>Employees</h2>
+
+<table class="table">
+    <tr>
+        <th>First Name</th>
+        <th>Age</th>
+        <th>Salary</th>
+    </tr>
+
+    @*@foreach (var e in ViewBag.EmployeeList)*@
+    @foreach (var e in Model)
+    {
+        <tr>
+            <td>@e.FirstName</td>
+            <td>@e.Age</td>
+            <td>$@e.Salary.ToString("0,000.00")</td>
+        </tr>
+    }
+</table>
+
+<form action="../Home/RetirementInfo" method="post">
+    
+    <label for="Id">Search by Id:</label>
+    <input id="Id" type="number" name="Id" min="1" max="@ViewBag.EmployeeList.Count" placeholder="Employee ID" style="width:100px; text-align:center;"/>
+
+    <input type="submit" value="Check Retire Info" class="btn-success" />
+</form>
+

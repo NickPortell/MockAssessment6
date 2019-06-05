@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "RetirementInfo";
+}
+
+<h2>RetirementInfo</h2>
+
+<table class="table">
+    <tr>
+        <th>Retire Status (T/F)</th>
+        <th>Benefit Amount $$$</th>
+    </tr>
+
+    <tr>
+        <td>@ViewBag.CanRetire</td>
+        <td>$@ViewBag.Benefits</td>
+    </tr>
+</table>
